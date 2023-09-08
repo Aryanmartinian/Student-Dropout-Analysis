@@ -5,9 +5,11 @@ import  matplotlib.pyplot as plt
 import plotly.express as px
 from PIL import Image 
 
+
+st.set_page_config(layout="wide")
 st.header("Student Dropout Analysis using Streamlit")
 st.sidebar.title("Dropout Analysis")
-data = pd.read_csv("data/studentDropIndia_20161215.csv")
+data = pd.read_csv("data/dataset.csv")
 if st.checkbox("Show Data"):
     st.write(data.head(100))
 

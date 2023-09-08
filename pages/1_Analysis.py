@@ -10,7 +10,7 @@ st.subheader('Key performance Indicators')
 # load the data
 @st.cache_data
 def load_data():
-    path = "data/studentDropIndia_20161215.csv"
+    path = "data/dataset.csv"
     data = pd.read_csv(path)
     return data
 
@@ -24,8 +24,8 @@ cols = data.columns.tolist() # convert the options to list
 selected_cols = st.multiselect('Select Columns',cols) # for multiple columns
 st.write(f'You selected:{len(selected_cols)}columns')
 
-st.metric(label= 'Average Dropout Students',value=round(data['school_id'].mean()),
-          delta = round(data['school_id'].std()))
+st.metric(label= 'Average Dropout Students',value=round(data['Unemployment rate'].mean()),
+          delta = round(data['Unemployment rate'].std()))
 
 for col in selected_cols:
     st.subheader(f'Mean {col}')
